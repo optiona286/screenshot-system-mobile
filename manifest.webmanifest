@@ -1,0 +1,9 @@
+{
+  "name": "BTC Options Mobile",
+  "short_name": "BTC Options",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071018",
+  "theme_color": "#071018",
+  "lang": "zh-Hant"
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071018">
+  <title>BTC Options Mobile</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">BINANCE OPTIONS</p><h1>BTC 選擇權</h1></div>
+    <button id="refreshBtn" class="icon-btn" aria-label="重新整理">↻</button>
+  </header>
+
+  <main>
+    <section class="market-card" id="captureArea">
+      <div class="market-head">
+        <div><span class="muted">標的現價</span><strong id="spotPrice">--</strong></div>
+        <div class="right"><span id="status" class="status">連線中</span><small id="updatedAt">--</small></div>
+      </div>
+
+      <div class="controls">
+        <label>到期日<select id="expirySelect"></select></label>
+        <label>週期<select id="intervalSelect"><option value="15m">15 分</option><option value="1h" selected>1 小時</option><option value="4h">4 小時</option></select></label>
+      </div>
+
+      <div class="segmented" role="group" aria-label="買權或賣權">
+        <button class="active" data-side="C">CALL</button>
+        <button data-side="P">PUT</button>
+      </div>
+
+      <label class="search">搜尋履約價<input id="strikeSearch" inputmode="numeric" placeholder="例如 120000"></label>
+      <div id="contractList" class="contract-list"></div>
+
+      <section class="chart-section">
+        <div class="instrument">
+          <div><span class="muted">選擇合約</span><h2 id="symbolLabel">尚未選擇</h2></div>
+          <div class="right"><strong id="lastPrice">--</strong><small id="changePct">--</small></div>
+        </div>
+        <div class="ohlc">
+          <span>開 <b id="openValue">--</b></span><span>高 <b id="highValue">--</b></span>
+          <span>低 <b id="lowValue">--</b></span><span>收 <b id="closeValue">--</b></span>
+        </div>
+        <canvas id="chart" aria-label="K 線圖"></canvas>
+      </section>
+    </section>
+
+    <button id="captureBtn" class="primary">下載目前畫面</button>
+    <p class="hint">公開行情資料僅供參考，不構成投資建議。</p>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
