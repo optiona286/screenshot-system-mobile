@@ -1,10 +1,11 @@
 # BTC Options Mobile
 
-獨立的手機優先 BTC 選擇權 K 線工具。它不依賴桌面版專案或本機 `localhost`，直接讀取 Binance Options 公開市場資料。
+獨立的手機優先 BTC 選擇權歷史 K 線工具。歷史 CSV 保存在 GitHub，手機只下載使用者選擇的日期與週期。
 
 ## 功能
 
-- BTC 選擇權到期日與 CALL／PUT 篩選
+- 歷史資料日期、來源週期與合約到期日篩選
+- BTC 選擇權 CALL／PUT 篩選
 - 履約價搜尋
 - 15 分鐘、1 小時、4 小時 K 線
 - 行動裝置友善介面
@@ -13,10 +14,10 @@
 
 ## 使用
 
-專案包含 Vercel Serverless API，用來安全轉送不需要 API Key 的 Binance 公開行情。匯入 GitHub 倉庫到 Vercel 後即可直接部署；不需要設定環境變數。
+網頁從公開 GitHub Raw 讀取所選歷史檔案，不需要資料庫或 API Key。
 
 本機開發：執行 `npm install`，再執行 `npm run dev`。
 
 ## 資料來源
 
-公開行情由 Binance Options REST API 提供。行情僅供參考，不構成投資建議。
+歷史資料由桌面版資料收集流程產生。行情僅供參考，不構成投資建議。

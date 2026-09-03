@@ -17,13 +17,15 @@
   <main>
     <section class="market-card" id="captureArea">
       <div class="market-head">
-        <div><span class="muted">標的現價</span><strong id="spotPrice">--</strong></div>
+        <div><span class="muted">歷史資料日期</span><strong id="spotPrice">--</strong></div>
         <div class="right"><span id="status" class="status">連線中</span><small id="updatedAt">--</small></div>
       </div>
 
       <div class="controls">
-        <label>到期日<select id="expirySelect"></select></label>
-        <label>週期<select id="intervalSelect"><option value="15m">15 分</option><option value="1h" selected>1 小時</option><option value="4h">4 小時</option></select></label>
+        <label>資料日期<select id="dateSelect"></select></label>
+        <label>來源週期<select id="intervalSelect"><option value="15m">15 分</option><option value="1h" selected>1 小時</option></select></label>
+        <label>合約到期日<select id="expirySelect"></select></label>
+        <label>K 線週期<select id="periodSelect"><option value="source">原始週期</option><option value="1h">1 小時</option><option value="4h">4 小時</option></select></label>
       </div>
 
       <div class="segmented" role="group" aria-label="買權或賣權">
@@ -53,6 +55,6 @@
 
   <div id="toast" class="toast" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="app.js"></script>
+  <script src="history.js"></script>
 </body>
 </html>
