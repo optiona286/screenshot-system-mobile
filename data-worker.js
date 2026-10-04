@@ -18,8 +18,31 @@ async function listDataFiles(signal) {
   if (!manifest || Date.now() - manifestAt > 30000) {
     const data = await jsonFile("./history-manifest.json", signal);
     if (!Array.isArray(data.files)) throw new Error("歷史資料索引格式錯誤");
-    manifest = data.files.filter((file) => FILE_PATTERN.test(file.name))
-      .sort((a, b) => b.date.localeCompare(a.date) || (b.interval === "1h") - (a.interval === "1h"));
+
+    const realFiles = data.files.filter((file) => FILE_PATTERN.test(file.name));
+    const juneDatesWithOptionData = new Set(
+      realFiles.filter((file) => String(file.date).startsWith("2026-06")).map((file) => file.date)
+    );
+
+    const btcOnlyDates = [];
+    for (let day = 1; day <= 30; day += 1) {
+      const date = `2026-06-${String(day).padStart(2, "0")}`;
+      if (juneDatesWithOptionData.has(date)) continue;
+      btcOnlyDates.push({
+        name: `BTCUSD_only_15m_${date}`,
+        date,
+        interval: "15m",
+        size: 0,
+        modifiedAt: "2026-07-01T00:00:00.000Z",
+        btcOnly: true,
+        virtual: true,
+      });
+    }
+
+    manifest = [...realFiles, ...btcOnlyDates]
+      .sort((a, b) => b.date.localeCompare(a.date)
+        || Number(Boolean(a.btcOnly)) - Number(Boolean(b.btcOnly))
+        || (b.interval === "1h") - (a.interval === "1h"));
     manifestAt = Date.now();
   }
   return manifest;
@@ -29,6 +52,17 @@ async function loadRows(fileName, signal) {
   const files = await listDataFiles(signal);
   const selected = fileName ? files.find((file) => file.name === fileName) : files[0];
   if (!selected) throw new Error("找不到所選歷史資料檔，請重讀並重新選擇日期");
+
+  if (selected.btcOnly) {
+    return {
+      selected,
+      signature: `btc-only:${selected.date}:${selected.interval}`,
+      rows: [],
+      bySymbol: new Map(),
+      symbols: [],
+    };
+  }
+
   const signature = selected.modifiedAt + ":" + selected.size;
   const cached = dataCache.get(selected.name);
   if (cached?.signature === signature) return { selected, ...cached };
@@ -338,45 +372,43 @@ async function getKlines(fileName, symbol, period, signal) {
 
 async function getBtcKlines(fileName, symbol, period, signal) {
   const { selected, bySymbol, symbols } = await loadRows(fileName, signal);
-  const reference = symbols.find((item) => item.symbol === symbol);
-  if (!reference) throw new Error("找不到對應契約，請重新選擇履約價");
-
   const selectedPeriod = normalizePeriod(period, selected.interval);
+  const bucket = periodMinutes(selectedPeriod) * 60000;
 
-  // June 2026 BTC/USD view is a complete month, not only the option contract's
-  // available window. This fills 6/1 ~ 6/30 even though option CSVs start later.
-  const isJune2026 = String(selected.date || "").startsWith("2026-06");
+  let reference = null;
   let optionStart = null;
   let optionEnd = null;
   let start;
   let end;
+  let rangeMode = "contract";
 
-  const times = symbols
-    .filter((item) => item.expiryDate === reference.expiryDate && item.strikePrice === reference.strikePrice)
-    .flatMap((item) => bySymbol.get(item.symbol) || [])
-    .map(optionTimestamp)
-    .filter(Number.isFinite);
+  if (selected.btcOnly) {
+    // Missing option-data date: show BTC/USD only for this calendar day.
+    // Option chain stays empty; no synthetic option values are created.
+    const dayStart = Date.parse(`${selected.date}T00:00:00+08:00`);
+    const nextDay = new Date(dayStart + 24 * 3600000).getTime();
+    start = Math.floor(dayStart / bucket) * bucket;
+    end = Math.ceil(nextDay / bucket) * bucket;
+    rangeMode = "day";
+  } else {
+    if (!symbol) throw new Error("缺少 symbol");
+    reference = symbols.find((item) => item.symbol === symbol);
+    if (!reference) throw new Error("找不到對應契約，請重新選擇履約價");
 
-  if (times.length) {
+    const times = symbols
+      .filter((item) => item.expiryDate === reference.expiryDate && item.strikePrice === reference.strikePrice)
+      .flatMap((item) => bySymbol.get(item.symbol) || [])
+      .map(optionTimestamp)
+      .filter(Number.isFinite);
+
+    if (!times.length) throw new Error("此契約沒有有效的歷史時間範圍");
     optionStart = Math.min(...times);
     optionEnd = Math.max(...times) + periodMinutes(selected.interval) * 60000;
-  }
-
-  const bucket = periodMinutes(selectedPeriod) * 60000;
-
-  if (isJune2026) {
-    // Month boundaries are Taiwan time because the UI and option files use Taipei time.
-    const monthStart = Date.parse("2026-06-01T00:00:00+08:00");
-    const monthEnd = Date.parse("2026-07-01T00:00:00+08:00");
-    start = Math.floor(monthStart / bucket) * bucket;
-    end = Math.ceil(monthEnd / bucket) * bucket;
-  } else {
-    if (!times.length) throw new Error("此契約沒有有效的歷史時間範圍");
     start = Math.floor(optionStart / bucket) * bucket;
     end = Math.ceil(optionEnd / bucket) * bucket;
   }
 
-  if (start >= Date.now()) throw new Error("此契約對應時間尚未到來，無法取得 BTC/USD 歷史 K 線");
+  if (start >= Date.now()) throw new Error("此日期尚未到來，無法取得 BTC/USD 歷史 K 線");
 
   const sourceInterval = selectedPeriod === "15m" ? "15m" : "1h";
   const granularity = periodMinutes(sourceInterval) * 60;
@@ -397,10 +429,14 @@ async function getBtcKlines(fileName, symbol, period, signal) {
     symbol: "BTC-USD",
     provider: "Coinbase Exchange",
     file: selected,
-    reference: { symbol, expiryDate: reference.expiryDate, strikePrice: reference.strikePrice },
+    reference: reference ? {
+      symbol: reference.symbol,
+      expiryDate: reference.expiryDate,
+      strikePrice: reference.strikePrice,
+    } : null,
     range: {
-      mode: isJune2026 ? "month" : "contract",
-      month: isJune2026 ? "2026-06" : null,
+      mode: rangeMode,
+      date: rangeMode === "day" ? selected.date : null,
       start: formatMarketTime(start, true),
       end: formatMarketTime(end - 1000, true),
       optionStart: Number.isFinite(optionStart) ? formatMarketTime(optionStart, true) : null,
