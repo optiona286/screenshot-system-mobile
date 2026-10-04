@@ -707,7 +707,9 @@
       $("volumeLabel").textContent = isBtc ? "成交量（BTC）" : "成交量";
       $("symbolMeta").textContent = `到期 ${info.expiryDate} ｜ 履約價 ${fmt(info.strikePrice, 0)} ｜ ${isBtc ? "對應時段 BTC 現貨" : info.side} ｜ ${data.period.toUpperCase()}${data.period !== data.sourceInterval ? `（由 ${data.sourceInterval} 聚合）` : ""}`;
       $("sourceInfo").textContent = isBtc
-        ? `${data.provider} · 契約資料 ${data.range.optionStart} ～ ${data.range.optionEnd} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`
+        ? (data.range?.mode === "month"
+          ? `${data.provider} · ${data.range.month} 全月 BTC/USD · ${data.range.start} ～ ${data.range.end} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`
+          : `${data.provider} · 契約資料 ${data.range.optionStart} ～ ${data.range.optionEnd} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`)
         : `歷史 CSV · ${data.file.date} · 檔案更新 ${new Date(data.file.modifiedAt).toLocaleString("zh-TW", { hour12: false, timeZone: "Asia/Taipei" })} · 台北時間`;
       $("lastPrice").textContent = fmt(last.close);
       $("lastPrice").style.color = change >= 0 ? "var(--up)" : "var(--down)";
