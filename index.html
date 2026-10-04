@@ -411,7 +411,7 @@
     <div class="brand">
       <div class="mark">K</div>
       <div>
-        <h1>BTC Options 手機看盤 <span class="version">2.2</span></h1>
+        <h1>BTC Options 手機看盤 <span class="version">2.3</span></h1>
         <div class="subtitle">期權鏈・歷史行情工作台</div>
       </div>
     </div>
@@ -519,7 +519,7 @@
     </main>
   </div>
 
-  <script src="./data-api.js"></script>
+  <script src="./data-api.js?ui=20261004-2"></script>
   <script>
     const state = {
       file: "",
@@ -1382,7 +1382,7 @@
     updateMobileHelp();
     new ResizeObserver(resizeAndDraw).observe($("chartStage"));
     loadMeta({ preserveFile: !!state.file });
-    if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(() => {});
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" }).catch(() => {});
   </script>
 </body>
 </html>
