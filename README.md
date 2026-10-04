@@ -1,23 +1,43 @@
-# BTC Options Mobile
+# BTC Options 手機看盤
 
-獨立的手機優先 BTC 選擇權歷史 K 線工具。歷史 CSV 保存在 GitHub，手機只下載使用者選擇的日期與週期。
+網站：https://optiona286.github.io/screenshot-system-mobile/
+
+手機與桌面共用 T 字期權鏈、BTC/USD 技術分析和歷史行情。使用 GitHub Pages，開啟網站不需要電腦上的 Node 服務，也不需要 API 金鑰。
 
 ## 功能
 
-- 歷史資料日期、來源週期與合約到期日篩選
-- BTC 選擇權 CALL／PUT 篩選
-- 履約價搜尋
-- 15 分鐘、1 小時、4 小時 K 線
-- 行動裝置友善介面
-- 下載目前畫面為 PNG
-- PWA 安裝支援
+- 手機「期權鏈／K 線」分頁；單指拖曳、雙指縮放、輕點查看價格。
+- CALL／PUT 報價查看期權；點中間履約價查看該到期日與履約價對應時段的 BTC/USD。
+- 15m、1h、4h；來源為 1h 時不提供 15m。紅漲綠跌，MA7、MA20、布林帶、高低價與成交量。
+- 最後 24 小時：到期前一日台北時間 16:00 至到期日 16:00，底色與起訖時間標記可開關。
+- 到期日篩選、自選星號、成交量排序、設定記憶、PNG 與 CSV 匯出。
+- 大型 CSV 在 Web Worker 解析；一次只保留一個歷史檔的解析快取。
 
-## 使用
+## 歷史資料（本系統的資料儲存層）
 
-網頁從公開 GitHub Raw 讀取所選歷史檔案，不需要資料庫或 API Key。
+`daily_options_trade_klines/` 是原始歷史行情 CSV，包括 K 線與合約清單。保留原始檔名與內容，未轉換成 SQL 資料庫；程式只讀取選定檔案，不修改歷史資料。
 
-本機開發：執行 `npm install`，再執行 `npm run dev`。
+部署時 `scripts/build-site.cjs` 自動產生 `history-manifest.json`，讓手機從同一網站下載對應 CSV，無須呼叫 GitHub 目錄 API。`_site/` 是產生的網站成品，不提交到 Git。
 
-## 資料來源
+新增歷史資料時，將桌面端新產生的 CSV 複製到本儲存庫同名資料夾，提交並推送即可；保留已有歷史檔。頁面每 30 秒可重讀索引，但不會自行切換到其他日期。
 
-歷史資料由桌面版資料收集流程產生。行情僅供參考，不構成投資建議。
+## BTC/USD 資料
+
+由 Coinbase Exchange 公開 candles API 讀取現貨 OHLCV，範圍取目前 CSV 中同一到期日、同一履約價 CALL／PUT 的最早開盤至最後一根結束。4h 由 1h 聚合，對齊週期邊界；畫面時間固定為台北時間。
+
+來源缺失的 K 棒不補造。API 未提供成交筆數與成交額，顯示「--」或留空。BTC 資料需要網路；連線、跨域限制或限流時畫面會提示失敗，可稍後重讀。
+
+API 文件：https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-candles
+
+## 部署與預覽
+
+推送 `main` 後，既有 GitHub Actions 流程建立 `_site/` 並發布至 GitHub Pages。首次開啟新版請重新整理，避免仍顯示舊版快取。
+
+本機預覽（需要 Node.js 與 Python）：
+
+```sh
+node scripts/build-site.cjs
+python -m http.server 8000 --directory _site
+```
+
+開啟 http://127.0.0.1:8000 。建置僅複製網站與資料，不執行測試。

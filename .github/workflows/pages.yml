@@ -23,9 +23,7 @@ jobs:
         with:
           enablement: true
       - name: Prepare site
-        run: |
-          mkdir _site
-          cp index.html styles.css history.js manifest.webmanifest sw.js _site/
+        run: node scripts/build-site.cjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

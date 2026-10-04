@@ -1,9 +1,11 @@
 {
-  "name": "BTC Options Mobile",
+  "name": "BTC 期權與現貨手機看盤",
   "short_name": "BTC Options",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#071018",
-  "theme_color": "#071018",
-  "lang": "zh-Hant"
+  "background_color": "#090d14",
+  "theme_color": "#090d14",
+  "scope": "./",
+  "lang": "zh-Hant",
+  "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }
