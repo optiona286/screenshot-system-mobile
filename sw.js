@@ -1,5 +1,5 @@
-const CACHE = "btc-options-history-v6-june-list";
-const SHELL = ["./", "./index.html", "./data-api.js?ui=20261005-june-list-2", "./data-worker.js?ui=20261005-june-list-2", "./manifest.webmanifest", "./icon.svg"];
+const CACHE = "btc-options-history-v7-empty48h";
+const SHELL = ["./", "./index.html", "./data-api.js?ui=20261005-empty48h-3", "./data-worker.js?ui=20261005-empty48h-3", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", (event) => event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener("activate", (event) => event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key.startsWith("btc-options-history-") && key !== CACHE).map((key) => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", (event) => {
