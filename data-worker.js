@@ -340,32 +340,78 @@ async function getBtcKlines(fileName, symbol, period, signal) {
   const { selected, bySymbol, symbols } = await loadRows(fileName, signal);
   const reference = symbols.find((item) => item.symbol === symbol);
   if (!reference) throw new Error("找不到對應契約，請重新選擇履約價");
+
   const selectedPeriod = normalizePeriod(period, selected.interval);
-  // A strike represents both CALL and PUT at the same expiry. Use their union in this CSV.
-  const times = symbols.filter((item) => item.expiryDate === reference.expiryDate && item.strikePrice === reference.strikePrice)
-    .flatMap((item) => bySymbol.get(item.symbol) || []).map(optionTimestamp).filter(Number.isFinite);
-  if (!times.length) throw new Error("此契約沒有有效的歷史時間範圍");
-  const optionStart = Math.min(...times);
-  const optionEnd = Math.max(...times) + periodMinutes(selected.interval) * 60000;
+
+  // June 2026 BTC/USD view is a complete month, not only the option contract's
+  // available window. This fills 6/1 ~ 6/30 even though option CSVs start later.
+  const isJune2026 = String(selected.date || "").startsWith("2026-06");
+  let optionStart = null;
+  let optionEnd = null;
+  let start;
+  let end;
+
+  const times = symbols
+    .filter((item) => item.expiryDate === reference.expiryDate && item.strikePrice === reference.strikePrice)
+    .flatMap((item) => bySymbol.get(item.symbol) || [])
+    .map(optionTimestamp)
+    .filter(Number.isFinite);
+
+  if (times.length) {
+    optionStart = Math.min(...times);
+    optionEnd = Math.max(...times) + periodMinutes(selected.interval) * 60000;
+  }
+
   const bucket = periodMinutes(selectedPeriod) * 60000;
-  const start = Math.floor(optionStart / bucket) * bucket;
-  const end = Math.ceil(optionEnd / bucket) * bucket;
+
+  if (isJune2026) {
+    // Month boundaries are Taiwan time because the UI and option files use Taipei time.
+    const monthStart = Date.parse("2026-06-01T00:00:00+08:00");
+    const monthEnd = Date.parse("2026-07-01T00:00:00+08:00");
+    start = Math.floor(monthStart / bucket) * bucket;
+    end = Math.ceil(monthEnd / bucket) * bucket;
+  } else {
+    if (!times.length) throw new Error("此契約沒有有效的歷史時間範圍");
+    start = Math.floor(optionStart / bucket) * bucket;
+    end = Math.ceil(optionEnd / bucket) * bucket;
+  }
+
   if (start >= Date.now()) throw new Error("此契約對應時間尚未到來，無法取得 BTC/USD 歷史 K 線");
+
   const sourceInterval = selectedPeriod === "15m" ? "15m" : "1h";
   const granularity = periodMinutes(sourceInterval) * 60;
   const availableEnd = Math.min(end, Math.ceil(Date.now() / (granularity * 1000)) * granularity * 1000);
   const rawItems = await fetchBtcCandles(start, availableEnd, granularity, signal);
   const items = aggregateBars(rawItems, selectedPeriod, sourceInterval).map((bar) => ({
-    ...bar, quoteVolume: null, trades: null, takerBuyVolume: null, takerBuyQuoteVolume: null,
+    ...bar,
+    quoteVolume: null,
+    trades: null,
+    takerBuyVolume: null,
+    takerBuyQuoteVolume: null,
     timeUtc: formatMarketTime(Date.parse(bar.time.replace(" ", "T") + "+08:00")),
   }));
+
   return {
-    ok: true, market: "btc", symbol: "BTC-USD", provider: "Coinbase Exchange", file: selected,
+    ok: true,
+    market: "btc",
+    symbol: "BTC-USD",
+    provider: "Coinbase Exchange",
+    file: selected,
     reference: { symbol, expiryDate: reference.expiryDate, strikePrice: reference.strikePrice },
-    range: { start: formatMarketTime(start, true), end: formatMarketTime(end - 1000, true),
-      optionStart: formatMarketTime(optionStart, true), optionEnd: formatMarketTime(optionEnd - 1000, true) },
-    period: selectedPeriod, sourceInterval, count: items.length, sourceCount: rawItems.length,
-    missingSourceBars: Math.max(0, Math.round((availableEnd - start) / (granularity * 1000)) - rawItems.length), items,
+    range: {
+      mode: isJune2026 ? "month" : "contract",
+      month: isJune2026 ? "2026-06" : null,
+      start: formatMarketTime(start, true),
+      end: formatMarketTime(end - 1000, true),
+      optionStart: Number.isFinite(optionStart) ? formatMarketTime(optionStart, true) : null,
+      optionEnd: Number.isFinite(optionEnd) ? formatMarketTime(optionEnd - 1000, true) : null,
+    },
+    period: selectedPeriod,
+    sourceInterval,
+    count: items.length,
+    sourceCount: rawItems.length,
+    missingSourceBars: Math.max(0, Math.round((availableEnd - start) / (granularity * 1000)) - rawItems.length),
+    items,
   };
 }
 
