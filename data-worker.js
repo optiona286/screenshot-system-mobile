@@ -383,13 +383,14 @@ async function getBtcKlines(fileName, symbol, period, signal) {
   let rangeMode = "contract";
 
   if (selected.btcOnly) {
-    // Missing option-data date: show BTC/USD only for this calendar day.
-    // Option chain stays empty; no synthetic option values are created.
-    const dayStart = Date.parse(`${selected.date}T00:00:00+08:00`);
-    const nextDay = new Date(dayStart + 24 * 3600000).getTime();
-    start = Math.floor(dayStart / bucket) * bucket;
-    end = Math.ceil(nextDay / bucket) * bucket;
-    rangeMode = "day";
+    // Only for dates with no option data:
+    // keep the original BTC chart behavior but use a continuous 48-hour window,
+    // ending at 16:00 on the selected list date (Taipei time).
+    const selectedEnd = Date.parse(`${selected.date}T16:00:00+08:00`);
+    const selectedStart = selectedEnd - 48 * 3600000;
+    start = Math.floor(selectedStart / bucket) * bucket;
+    end = Math.ceil(selectedEnd / bucket) * bucket;
+    rangeMode = "empty-option-48h";
   } else {
     if (!symbol) throw new Error("缺少 symbol");
     reference = symbols.find((item) => item.symbol === symbol);
@@ -436,7 +437,7 @@ async function getBtcKlines(fileName, symbol, period, signal) {
     } : null,
     range: {
       mode: rangeMode,
-      date: rangeMode === "day" ? selected.date : null,
+      date: rangeMode === "empty-option-48h" ? selected.date : null,
       start: formatMarketTime(start, true),
       end: formatMarketTime(end - 1000, true),
       optionStart: Number.isFinite(optionStart) ? formatMarketTime(optionStart, true) : null,
