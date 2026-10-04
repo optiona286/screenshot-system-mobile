@@ -144,8 +144,7 @@
     .last-price strong{display:block;font-size:25px;line-height:1;font-weight:500;font-variant-numeric:tabular-nums}
     .change{margin-top:5px;font-size:10px}
     .cards{
-      display:grid;grid-template-columns:repeat(8,minmax(0,1fr));
-      border-bottom:1px solid #262626;background:#181818;
+      display:none;
     }
     .card{min-width:0;padding:8px 7px;border-right:1px solid #292929;background:#181818}
     .card:last-child{border-right:0}
@@ -170,13 +169,20 @@
     .chart-message{position:absolute;inset:0;display:grid;place-items:center;color:#777;font-size:12px;pointer-events:none}
     .chart-message[hidden]{display:none}
     .tooltip{
-      position:absolute;z-index:10;display:none;min-width:205px;max-width:230px;
-      padding:8px;border:1px solid #555;background:rgba(8,8,8,.96);color:#eee;font-size:10px;line-height:1.4;pointer-events:none;
+      position:absolute;z-index:10;display:none;top:6px;right:6px;left:auto;
+      max-width:calc(100% - 12px);padding:5px 7px;border:1px solid #4a4a4a;
+      background:rgba(8,8,8,.94);color:#eee;font-size:9px;line-height:1.25;
+      pointer-events:none;white-space:nowrap;overflow-x:auto;scrollbar-width:none;
+      box-shadow:0 2px 8px rgba(0,0,0,.35);
     }
-    .tip-head{display:flex;justify-content:space-between;gap:10px;padding-bottom:5px;margin-bottom:5px;border-bottom:1px solid #333}
-    .tip-time{font-weight:600}.tip-period{color:#aaa}
-    .tip-grid{display:grid;gap:3px}.tip-row{display:flex;justify-content:space-between;gap:8px}
-    .tip-label{color:#777}.tip-value{font-variant-numeric:tabular-nums}.tip-row.compact{padding-top:5px;margin-top:3px;border-top:1px solid #292929;color:#888}
+    .tooltip::-webkit-scrollbar{display:none}
+    .tip-head{display:inline-flex;align-items:center;gap:6px;margin-right:8px;padding-right:8px;border-right:1px solid #333;vertical-align:middle}
+    .tip-time{font-weight:600;color:#f2f2f2}.tip-period{color:#aaa}
+    .tip-grid{display:inline-grid;grid-auto-flow:column;grid-auto-columns:max-content;gap:0;vertical-align:middle}
+    .tip-item{display:flex;align-items:baseline;gap:3px;padding:0 6px;border-right:1px solid #2a2a2a}
+    .tip-item:last-child{border-right:0;padding-right:0}
+    .tip-label{color:#777;font-size:8px}.tip-value{font-variant-numeric:tabular-nums;font-weight:600}
+    .tooltip .up{color:var(--up)!important}.tooltip .down{color:var(--down)!important}
     .chart-footer{display:flex;justify-content:space-between;gap:8px;padding:5px 8px;border-top:1px solid #252525;background:#0b0b0b;color:#6f6f6f;font-size:8px}
     .layout.focus{grid-template-columns:minmax(0,1fr)}.layout.focus aside{display:none}
     .mobile-nav{display:none}
@@ -187,12 +193,13 @@
     @media(max-width:760px),(max-width:980px) and (pointer:coarse){
 
       /* Mobile visual-balance pass: reduce chrome, give the quote table / chart more vertical weight. */
-      .topbar{min-height:48px;padding:5px 9px}
-      .mark{width:26px;height:26px;font-size:12px}
+      :root{--navh:48px}
+      .topbar{min-height:42px;padding:4px 8px}
+      .mark{width:24px;height:24px;font-size:11px}
       .brand{gap:7px}
-      .brand h1{font-size:15px}
+      .brand h1{font-size:14px}
       .top-actions .status{font-size:7px;max-width:88px}
-      .layout,.layout.focus{height:calc(100dvh - 48px - var(--navh))}
+      .layout,.layout.focus{height:calc(100dvh - 42px - var(--navh))}
       .controls,.filters{padding:4px 6px 0;gap:5px}
       .field label{display:none}
       select,input[type="search"]{min-height:30px;margin-top:0;padding:4px 6px;font-size:11px}
@@ -213,20 +220,12 @@
       .source-info{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
       .last-price strong{font-size:21px}
       .change{margin-top:3px;font-size:8px}
-      .cards{
-        display:flex;overflow-x:auto;gap:0;scrollbar-width:none;
-        min-height:43px;max-height:43px;
-      }
-      .cards::-webkit-scrollbar{display:none}
-      .card{
-        flex:0 0 78px;min-width:78px;height:43px;padding:5px 6px;border-right:1px solid #292929;
-      }
-      .card span{font-size:7px}.card b{margin-top:2px;font-size:9px}
+      .cards{display:none}
       .chart-tools{min-height:33px}
       .toggle{height:32px;min-width:50px;padding:0 7px;font-size:8px}
       .chart-footer{padding:3px 6px}
       .chart-stage{min-height:330px}
-      .mobile-nav{height:calc(58px + env(safe-area-inset-bottom));padding-top:2px}
+      .mobile-nav{height:calc(var(--navh) + env(safe-area-inset-bottom));padding-top:0}
       .mobile-nav button{font-size:10px}
       body{height:100dvh;overflow:hidden;padding-top:env(safe-area-inset-top)}
       .topbar{background:#121212;border-bottom-color:#242424}
@@ -238,10 +237,10 @@
         position:fixed;left:0;right:0;bottom:0;z-index:50;
         display:grid;grid-template-columns:1fr 1fr 1fr;
         height:calc(var(--navh) + env(safe-area-inset-bottom));
-        padding:4px 8px env(safe-area-inset-bottom);border-top:1px solid #bbb;background:#d2d2d2;
+        padding:1px 8px env(safe-area-inset-bottom);border-top:1px solid #aaa;background:#d2d2d2;
       }
       .mobile-nav button{
-        border:0;background:transparent;color:#444;font-size:11px;display:flex;align-items:center;justify-content:center;gap:4px;
+        border:0;background:transparent;color:#444;font-size:10px;display:flex;align-items:center;justify-content:center;gap:3px;
       }
       .mobile-nav button[aria-pressed="true"]{color:#000;font-weight:700}
       .layout,.layout.focus{display:block;overflow:hidden}
@@ -427,6 +426,7 @@
       expiry: "", favorites: [], mode: "strike", autoRefresh: false,
       busy: false, metaBusy: false, requestId: 0, controller: null,
       studies: null, hoverY: null,
+      crosshairPinned: false,
       view: "option",
     };
 
@@ -474,7 +474,7 @@
       requestAnimationFrame(resizeAndDraw);
     }
     function updateMobileHelp() {
-      $("gestureHelp").textContent = mobileLayout.matches ? "單指拖曳 · 雙指縮放 · 輕點查看價格" : "拖曳平移 · 滾輪縮放 · 雙擊回到最新";
+      $("gestureHelp").textContent = mobileLayout.matches ? "輕點顯示十字線 · 顯示後拖曳只移動十字線" : "移動滑鼠看十字線 · 拖曳平移 · 滾輪縮放";
       resizeAndDraw();
     }
     mobileLayout.addEventListener("change", updateMobileHelp);
@@ -991,7 +991,8 @@
         const local = state.hover - state.start;
         const cx = x(local);
         const cy = Math.max(top, Math.min(priceBottom, state.hoverY ?? top));
-        ctx.strokeStyle = "#8795aa";
+        ctx.strokeStyle = "#d8d8d8";
+        ctx.lineWidth = 1;
         ctx.setLineDash([4, 4]);
         ctx.beginPath();
         ctx.moveTo(cx, top);
@@ -1010,7 +1011,7 @@
       }
     }
 
-    function showTooltip(event) {
+    function showTooltip(event, pin = false) {
       if (!state.rows.length) return;
       const rect = ui.chart.getBoundingClientRect();
       const left = 12;
@@ -1018,50 +1019,42 @@
       const localX = event.clientX - rect.left;
       const index = Math.floor((localX - left) / (rect.width - left - right) * state.visible);
       if (index < 0 || index >= state.visible) {
-        hideTooltip();
+        if (!state.crosshairPinned) hideTooltip();
         draw();
         return;
       }
       state.hover = state.start + index;
-      state.hoverY = event.clientY - rect.top;
+      state.hoverY = Math.max(18, Math.min(rect.height - 27, event.clientY - rect.top));
+      if (pin) state.crosshairPinned = true;
       const row = state.rows[state.hover];
       if (!row) return;
       const direction = row.close >= row.open ? "up" : "down";
       const barChange = row.open ? ((row.close / row.open) - 1) * 100 : 0;
       ui.tip.innerHTML = `
         <div class="tip-head">
-          <div class="tip-time">${esc(row.time)}</div>
-          <div class="tip-period">${state.period.toUpperCase()}</div>
+          <span class="tip-time">${esc(row.time)}</span>
+          <span class="tip-period">${state.period.toUpperCase()}</span>
         </div>
         <div class="tip-grid">
-          <div class="tip-row">
-            <span><span class="tip-label">開</span> <span class="tip-value">${fmt(row.open)}</span></span>
-            <span><span class="tip-label">高</span> <span class="tip-value chg up">${fmt(row.high)}</span></span>
-          </div>
-          <div class="tip-row">
-            <span><span class="tip-label">低</span> <span class="tip-value chg down">${fmt(row.low)}</span></span>
-            <span><span class="tip-label">收</span> <span class="tip-value chg ${direction}">${fmt(row.close)}</span></span>
-          </div>
-          <div class="tip-row">
-            <span class="tip-label">漲跌</span>
-            <span class="tip-value chg ${direction}">${barChange >= 0 ? "+" : ""}${barChange.toFixed(2)}%</span>
-          </div>
-          <div class="tip-row compact">
-            ${state.view === "btc" ? `<span>量 ${fmt(row.volume, 2)} BTC</span><span>價格 USD</span>` : `<span>量 ${fmt(row.volume, 2)}</span><span>筆 ${fmt(row.trades, 0)}</span><span>額 ${fmt(row.quoteVolume, 2)}</span>`}
-          </div>
+          <span class="tip-item"><span class="tip-label">開</span><span class="tip-value">${fmt(row.open)}</span></span>
+          <span class="tip-item"><span class="tip-label">高</span><span class="tip-value up">${fmt(row.high)}</span></span>
+          <span class="tip-item"><span class="tip-label">低</span><span class="tip-value down">${fmt(row.low)}</span></span>
+          <span class="tip-item"><span class="tip-label">收</span><span class="tip-value ${direction}">${fmt(row.close)}</span></span>
+          <span class="tip-item"><span class="tip-label">漲跌</span><span class="tip-value ${direction}">${barChange >= 0 ? "+" : ""}${barChange.toFixed(2)}%</span></span>
+          <span class="tip-item"><span class="tip-label">量</span><span class="tip-value">${fmt(row.volume, 2)}</span></span>
+          ${state.view === "btc" ? "" : `<span class="tip-item"><span class="tip-label">筆</span><span class="tip-value">${fmt(row.trades, 0)}</span></span>`}
         </div>`;
       ui.tip.style.display = "block";
-      const tipW = ui.tip.offsetWidth || 224;
-      const tipH = ui.tip.offsetHeight || 118;
-      const tipX = localX + tipW + 16 > rect.width ? localX - tipW - 12 : localX + 12;
-      ui.tip.style.left = `${Math.max(4, Math.min(rect.width - tipW - 4, tipX))}px`;
-      ui.tip.style.top = `${Math.max(4, Math.min(rect.height - tipH - 4, event.clientY - rect.top + 10))}px`;
+      ui.tip.style.left = "auto";
+      ui.tip.style.right = "6px";
+      ui.tip.style.top = "6px";
       draw();
     }
 
     function hideTooltip() {
       state.hover = -1;
       state.hoverY = null;
+      state.crosshairPinned = false;
       ui.tip.style.display = "none";
     }
 
@@ -1208,7 +1201,16 @@
     }
     ui.chart.addEventListener("pointermove", (event) => {
       if (chartPointers.has(event.pointerId)) chartPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-      if (chartPointers.size >= 2 && pinch && state.rows.length) {
+
+      // Once a touch crosshair is pinned, the chart viewport is frozen.
+      // One-finger movement only moves the crosshair / selected candle.
+      if (event.pointerType === "touch" && state.crosshairPinned && chartPointers.size <= 1) {
+        pointerMoved = true;
+        showTooltip(event, true);
+        return;
+      }
+
+      if (chartPointers.size >= 2 && pinch && state.rows.length && !state.crosshairPinned) {
         const [a, b] = [...chartPointers.values()];
         const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
         const rect = ui.chart.getBoundingClientRect();
@@ -1216,7 +1218,7 @@
         state.visible = Math.min(state.rows.length, Math.max(Math.min(8, state.rows.length), Math.round(pinch.visible * pinch.distance / distance)));
         state.start = Math.max(0, Math.min(state.rows.length - state.visible, Math.round(pinch.anchor - state.visible * ratio)));
         draw();
-      } else if (state.dragging && state.rows.length) {
+      } else if (state.dragging && state.rows.length && !state.crosshairPinned) {
         if (pointerOrigin && Math.hypot(event.clientX - pointerOrigin.x, event.clientY - pointerOrigin.y) > 5) pointerMoved = true;
         if (!pointerMoved) return;
         const step = (ui.chart.clientWidth - 84) / state.visible;
@@ -1231,8 +1233,10 @@
       }
     });
     ui.chart.addEventListener("pointerleave", () => {
-      hideTooltip();
-      draw();
+      if (!state.crosshairPinned) {
+        hideTooltip();
+        draw();
+      }
     });
     ui.chart.addEventListener("pointerdown", (event) => {
       if (event.button !== 0) return;
@@ -1241,14 +1245,23 @@
         pointerOrigin = { x: event.clientX, y: event.clientY };
         pointerMoved = false;
       }
+      ui.chart.setPointerCapture(event.pointerId);
+
+      if (event.pointerType === "touch" && state.crosshairPinned) {
+        state.dragging = false;
+        showTooltip(event, true);
+        ui.chart.style.cursor = "crosshair";
+        return;
+      }
+
       state.dragging = true;
       state.dragX = event.clientX;
-      ui.chart.setPointerCapture(event.pointerId);
-      hideTooltip();
+      if (event.pointerType !== "touch") hideTooltip();
       ui.chart.style.cursor = "grabbing";
-      if (chartPointers.size >= 2) beginPinch();
+      if (chartPointers.size >= 2 && !state.crosshairPinned) beginPinch();
     });
     function endDrag(event) {
+      const wasTouch = event.pointerType === "touch";
       const tap = event.type === "pointerup" && chartPointers.has(event.pointerId) && chartPointers.size === 1 && !pointerMoved;
       chartPointers.delete(event.pointerId);
       if (chartPointers.size < 2) pinch = null;
@@ -1257,9 +1270,12 @@
         state.dragX = remaining.x;
         pointerOrigin = remaining;
       }
-      state.dragging = chartPointers.size > 0;
+      state.dragging = chartPointers.size > 0 && !state.crosshairPinned;
       ui.chart.style.cursor = state.dragging ? "grabbing" : "crosshair";
-      if (tap) showTooltip(event);
+
+      // Mobile: a single tap activates and pins the crosshair.
+      // After that, the viewport remains fixed and dragging only moves the crosshair.
+      if (tap) showTooltip(event, wasTouch || state.crosshairPinned);
     }
     ui.chart.addEventListener("pointerup", endDrag);
     ui.chart.addEventListener("pointercancel", endDrag);
