@@ -91,11 +91,8 @@
     .chain-table .side-head .call-band{background:#a90000;color:#fff}
     .chain-table .side-head .put-band{background:#007d13;color:#fff}
     .chain-table .side-head .strike-cap{background:#050505;color:#777;border-left:1px solid #202020;border-right:1px solid #202020}
-    .chain-table th:nth-child(1),
-    .chain-table th:nth-child(2),
-    .chain-table th:nth-child(3),
-    .chain-table th:nth-child(4),
-    .chain-table th:nth-child(5){width:20%}
+    .chain-table col{width:20%!important}
+    .chain-table .side-head th{width:auto!important}
     .chain-table td{
       height:56px;border-bottom:1px solid #262626;background:#000;color:#00d829;
       text-align:right;font-size:14px;font-weight:400;vertical-align:middle;
@@ -277,11 +274,7 @@
     }
     @media(max-width:390px){
       .top-actions .status{display:none}
-      .chain-table th:nth-child(1),
-      .chain-table th:nth-child(2),
-      .chain-table th:nth-child(3),
-      .chain-table th:nth-child(4),
-      .chain-table th:nth-child(5){width:20%}
+      .chain-table col{width:20%!important}
       .quote,.quote-metric{padding-left:4px;padding-right:4px}
       .subline{font-size:7px}
       .instrument h2{max-width:205px}
@@ -342,6 +335,9 @@
       </div>
       <div class="chain-wrap">
         <table class="chain-table">
+          <colgroup>
+            <col><col><col><col><col>
+          </colgroup>
           <thead>
             <tr class="side-head">
               <th colspan="2" class="call-band">CALL</th>
