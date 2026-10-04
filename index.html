@@ -576,10 +576,12 @@
       ui.expiry.innerHTML = `<option value="all">全部到期日</option>` + expiries.map((expiry) => `<option value="${esc(expiry)}">${esc(expiry)}</option>`).join("");
       ui.expiry.value = state.expiry;
       ui.mode.value = state.mode;
-      $("sourceInfo").textContent = `歷史 CSV · ${data.file.date} · 資料檔時間 ${new Date(data.file.modifiedAt).toLocaleString("zh-TW", { hour12: false, timeZone: "Asia/Taipei" })} · 台北時間`;
+      $("sourceInfo").textContent = data.file.btcOnly
+        ? `BTC/USD · ${data.file.date} · 此日選擇權資料空白`
+        : `歷史 CSV · ${data.file.date} · 資料檔時間 ${new Date(data.file.modifiedAt).toLocaleString("zh-TW", { hour12: false, timeZone: "Asia/Taipei" })} · 台北時間`;
 
       ui.file.innerHTML = data.files.map((file) =>
-        `<option value="${esc(file.name)}" ${file.name === state.file ? "selected" : ""}>${file.date} ｜ ${file.interval} ｜ ${(file.size / 1024).toFixed(0)} KB</option>`
+        `<option value="${esc(file.name)}" ${file.name === state.file ? "selected" : ""}>${file.date} ｜ ${file.btcOnly ? "BTC" : `${file.interval} ｜ ${(file.size / 1024).toFixed(0)} KB`}</option>`
       ).join("");
       ui.period.innerHTML = state.periods.map((period) =>
         `<option value="${period}" ${period === state.period ? "selected" : ""}>${period.toUpperCase()}</option>`
@@ -587,12 +589,18 @@
       $("mobilePeriod").innerHTML = ui.period.innerHTML;
 
       ui.status.className = "status ok";
-      ui.status.textContent = `${data.rowCount.toLocaleString()} 筆 ｜ ${data.symbolCount} 合約 ｜ ${data.file.date} ${data.file.interval}`;
+      ui.status.textContent = data.file.btcOnly
+        ? `BTC/USD ｜ ${data.file.date} ｜ 選擇權空白`
+        : `${data.rowCount.toLocaleString()} 筆 ｜ ${data.symbolCount} 合約 ｜ ${data.file.date} ${data.file.interval}`;
       renderChain();
 
       state.metaBusy = false;
       const available = state.symbols.filter((s) => state.expiry === "all" || s.expiryDate === state.expiry);
-      if (!available.some((item) => item.symbol === state.selected)) {
+      if (data.file.btcOnly) {
+        state.selected = "";
+        state.view = "btc";
+        await selectSymbol("", { view: "btc" });
+      } else if (!available.some((item) => item.symbol === state.selected)) {
         const mostActive = [...available].sort((a, b) => b.volume - a.volume)[0];
         if (mostActive) await selectSymbol(mostActive.symbol, { view: state.view });
         else { state.selected = ""; clearChart("此資料檔沒有可用合約"); saveSettings(); }
@@ -627,7 +635,9 @@
           <td class="strike">${strikeButton(row)}</td>
           ${quoteCell(row.put, "put")}
         </tr>
-      `).join("") || `<tr><td colspan="5"><div class="empty">${state.mode === "favorites" ? "此篩選下尚無自選合約，點選報價旁的 ☆ 即可加入。" : "沒有符合條件的期權，試著更換到期日或清除搜尋。"}</div></td></tr>`;
+      `).join("") || (state.fileInfo?.btcOnly
+        ? `<tr><td colspan="5"><div class="empty">此日選擇權資料空白</div></td></tr>`
+        : `<tr><td colspan="5"><div class="empty">${state.mode === "favorites" ? "此篩選下尚無自選合約，點選報價旁的 ☆ 即可加入。" : "沒有符合條件的期權，試著更換到期日或清除搜尋。"}</div></td></tr>`);
     }
 
     function quoteCell(item, sideClass) {
@@ -670,7 +680,7 @@
       ui.status.textContent = `讀取 ${chartSymbol} ${state.period.toUpperCase()}${view === "btc" ? " · 契約對應時段" : ""}...`;
       try {
         const route = view === "btc" ? "/api/btc-klines" : "/api/klines";
-        const data = await getJson(`${route}?file=${encodeURIComponent(state.file)}&symbol=${encodeURIComponent(symbol)}&period=${encodeURIComponent(state.period)}`, request.controller);
+        const data = await getJson(`${route}?file=${encodeURIComponent(state.file)}&symbol=${encodeURIComponent(symbol || "")}&period=${encodeURIComponent(state.period)}`, request.controller);
         if (request.id !== state.requestId) return;
         state.rows = data.items || [];
         state.studies = { ma7: movingAverage(state.rows, 7), ma20: movingAverage(state.rows, 20), bb: bollinger(state.rows) };
@@ -697,7 +707,7 @@
     function updateSummary(data) {
       const rows = state.rows;
       const info = state.symbols.find((item) => item.symbol === state.selected);
-      if (!rows.length || !info) return;
+      if (!rows.length) return;
       const first = rows[0];
       const last = rows.at(-1);
       const change = first.open ? ((last.close / first.open) - 1) * 100 : 0;
@@ -705,10 +715,12 @@
       $("symbolTitle").textContent = isBtc ? "BTC / USD" : state.selected;
       $("chartKind").textContent = isBtc ? "BTC 現貨 · 技術分析" : "期權 K 線";
       $("volumeLabel").textContent = isBtc ? "成交量（BTC）" : "成交量";
-      $("symbolMeta").textContent = `到期 ${info.expiryDate} ｜ 履約價 ${fmt(info.strikePrice, 0)} ｜ ${isBtc ? "對應時段 BTC 現貨" : info.side} ｜ ${data.period.toUpperCase()}${data.period !== data.sourceInterval ? `（由 ${data.sourceInterval} 聚合）` : ""}`;
+      $("symbolMeta").textContent = isBtc && !info
+        ? `${data.file.date} ｜ BTC/USD ｜ ${data.period.toUpperCase()}${data.period !== data.sourceInterval ? `（由 ${data.sourceInterval} 聚合）` : ""}`
+        : `到期 ${info.expiryDate} ｜ 履約價 ${fmt(info.strikePrice, 0)} ｜ ${isBtc ? "對應時段 BTC 現貨" : info.side} ｜ ${data.period.toUpperCase()}${data.period !== data.sourceInterval ? `（由 ${data.sourceInterval} 聚合）` : ""}`;
       $("sourceInfo").textContent = isBtc
-        ? (data.range?.mode === "month"
-          ? `${data.provider} · ${data.range.month} 全月 BTC/USD · ${data.range.start} ～ ${data.range.end} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`
+        ? (data.range?.mode === "day"
+          ? `${data.provider} · ${data.range.date} BTC/USD · ${data.range.start} ～ ${data.range.end} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`
           : `${data.provider} · 契約資料 ${data.range.optionStart} ～ ${data.range.optionEnd} · 台北時間${data.missingSourceBars ? ` · 來源缺少 ${data.missingSourceBars} 根 K 棒` : ""}`)
         : `歷史 CSV · ${data.file.date} · 檔案更新 ${new Date(data.file.modifiedAt).toLocaleString("zh-TW", { hour12: false, timeZone: "Asia/Taipei" })} · 台北時間`;
       $("lastPrice").textContent = fmt(last.close);
@@ -1132,7 +1144,7 @@
     ui.period.addEventListener("change", async () => {
       state.period = ui.period.value;
       $("mobilePeriod").value = state.period;
-      if (state.selected) await selectSymbol(state.selected, { view: state.view });
+      if (state.selected || state.fileInfo?.btcOnly) await selectSymbol(state.selected || "", { view: state.fileInfo?.btcOnly ? "btc" : state.view });
     });
     ui.expiry.addEventListener("change", () => {
       state.expiry = ui.expiry.value;
