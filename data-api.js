@@ -5,7 +5,7 @@
   const requests = new Map();
   function connect() {
     if (worker) return worker;
-    worker = new Worker(new URL("./data-worker.js?ui=20261005-june-list-2", document.baseURI));
+    worker = new Worker(new URL("./data-worker.js?ui=20261005-empty48h-3", document.baseURI));
     worker.onmessage = ({ data }) => {
       const request = requests.get(data.id);
       if (!request) return;
