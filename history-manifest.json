@@ -1,0 +1,1433 @@
+{
+  "generatedAt": "2026-10-04T09:10:07.880Z",
+  "files": [
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-10-04_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-10-04",
+      "size": 415494,
+      "modifiedAt": "2026-10-04T07:55:15.133Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-10-04_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-10-04",
+      "size": 1652734,
+      "modifiedAt": "2026-10-04T07:55:35.875Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-10-03_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-10-03",
+      "size": 580773,
+      "modifiedAt": "2026-10-03T07:55:18.884Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-10-03_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-10-03",
+      "size": 2306026,
+      "modifiedAt": "2026-10-03T07:55:44.700Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-10-02_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-10-02",
+      "size": 5216308,
+      "modifiedAt": "2026-10-02T07:55:59.909Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-10-02_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-10-02",
+      "size": 14050842,
+      "modifiedAt": "2026-10-02T07:57:59.355Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-10-01_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-10-01",
+      "size": 418530,
+      "modifiedAt": "2026-10-01T07:55:17.191Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-10-01_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-10-01",
+      "size": 1658255,
+      "modifiedAt": "2026-10-01T07:55:39.278Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-30_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-30",
+      "size": 375526,
+      "modifiedAt": "2026-09-30T07:55:15.714Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-30_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-30",
+      "size": 1491577,
+      "modifiedAt": "2026-09-30T07:55:33.653Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-29_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-29",
+      "size": 377408,
+      "modifiedAt": "2026-09-29T07:55:17.505Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-29_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-29",
+      "size": 1497017,
+      "modifiedAt": "2026-09-29T07:55:37.285Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-28_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-28",
+      "size": 287764,
+      "modifiedAt": "2026-09-28T07:55:14.100Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-28_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-28",
+      "size": 1140079,
+      "modifiedAt": "2026-09-28T07:55:29.939Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-27_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-27",
+      "size": 261875,
+      "modifiedAt": "2026-09-27T07:55:11.548Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-27_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-27",
+      "size": 1044524,
+      "modifiedAt": "2026-09-27T07:55:25.282Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-26_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-26",
+      "size": 501598,
+      "modifiedAt": "2026-09-26T07:55:18.865Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-26_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-26",
+      "size": 1995101,
+      "modifiedAt": "2026-09-26T07:55:43.264Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-25_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-25",
+      "size": 24476123,
+      "modifiedAt": "2026-09-25T07:58:55.854Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-25_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-25",
+      "size": 9406830,
+      "modifiedAt": "2026-09-25T08:00:36.999Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-24_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-24",
+      "size": 759227,
+      "modifiedAt": "2026-09-24T07:55:27.023Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-24_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-24",
+      "size": 3016868,
+      "modifiedAt": "2026-09-24T07:56:03.870Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-23_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-23",
+      "size": 658543,
+      "modifiedAt": "2026-09-23T07:55:29.667Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-23_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-23",
+      "size": 2609145,
+      "modifiedAt": "2026-09-23T07:56:07.281Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-22_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-22",
+      "size": 418406,
+      "modifiedAt": "2026-09-22T07:55:21.736Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-22_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-22",
+      "size": 1654150,
+      "modifiedAt": "2026-09-22T07:55:45.817Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-21_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-21",
+      "size": 520199,
+      "modifiedAt": "2026-09-21T07:55:18.635Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-21_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-21",
+      "size": 2070702,
+      "modifiedAt": "2026-09-21T07:55:42.326Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-20_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-20",
+      "size": 567606,
+      "modifiedAt": "2026-09-20T07:55:23.100Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-20_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-20",
+      "size": 2258434,
+      "modifiedAt": "2026-09-20T07:55:59.687Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-19_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-19",
+      "size": 556524,
+      "modifiedAt": "2026-09-19T07:55:24.328Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-19_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-19",
+      "size": 2206142,
+      "modifiedAt": "2026-09-19T07:55:54.023Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-18_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-18",
+      "size": 4109873,
+      "modifiedAt": "2026-09-18T07:55:45.774Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-18_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-18",
+      "size": 9189385,
+      "modifiedAt": "2026-09-18T07:56:58.818Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-17_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-17",
+      "size": 472142,
+      "modifiedAt": "2026-09-17T07:55:17.288Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-17_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-17",
+      "size": 1873237,
+      "modifiedAt": "2026-09-17T07:55:37.728Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-16_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-16",
+      "size": 491132,
+      "modifiedAt": "2026-09-16T07:55:16.631Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-16_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-16",
+      "size": 1946863,
+      "modifiedAt": "2026-09-16T07:55:38.921Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-15_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-15",
+      "size": 404937,
+      "modifiedAt": "2026-09-15T07:55:18.437Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-15_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-15",
+      "size": 1603500,
+      "modifiedAt": "2026-09-15T07:55:38.687Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-14_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-14",
+      "size": 635863,
+      "modifiedAt": "2026-09-14T07:55:18.130Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-14_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-14",
+      "size": 2530385,
+      "modifiedAt": "2026-09-14T07:55:45.497Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-13_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-13",
+      "size": 537434,
+      "modifiedAt": "2026-09-13T07:55:17.316Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-13_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-13",
+      "size": 2139199,
+      "modifiedAt": "2026-09-13T07:55:42.907Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-12_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-12",
+      "size": 728863,
+      "modifiedAt": "2026-09-12T07:55:24.256Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-12_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-12",
+      "size": 2895182,
+      "modifiedAt": "2026-09-12T07:55:57.694Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-11_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-11",
+      "size": 5398299,
+      "modifiedAt": "2026-09-11T07:55:56.646Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-11_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-11",
+      "size": 11689643,
+      "modifiedAt": "2026-09-11T07:57:30.289Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-10_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-10",
+      "size": 635595,
+      "modifiedAt": "2026-09-10T07:55:22.289Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-10_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-10",
+      "size": 2529366,
+      "modifiedAt": "2026-09-10T07:55:50.299Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-09_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-09",
+      "size": 434800,
+      "modifiedAt": "2026-09-09T07:55:18.458Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-09_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-09",
+      "size": 1728062,
+      "modifiedAt": "2026-09-09T07:55:39.876Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-08_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-08",
+      "size": 357075,
+      "modifiedAt": "2026-09-08T07:55:18.319Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-08_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-08",
+      "size": 1419240,
+      "modifiedAt": "2026-09-08T07:55:38.247Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-07_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-07",
+      "size": 631764,
+      "modifiedAt": "2026-09-07T07:55:21.470Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-07_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-07",
+      "size": 2517513,
+      "modifiedAt": "2026-09-07T07:55:49.047Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-06_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-06",
+      "size": 634011,
+      "modifiedAt": "2026-09-06T07:55:22.084Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-06_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-06",
+      "size": 2522615,
+      "modifiedAt": "2026-09-06T07:55:55.080Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-05_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-05",
+      "size": 757163,
+      "modifiedAt": "2026-09-05T07:55:26.047Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-05_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-05",
+      "size": 3007496,
+      "modifiedAt": "2026-09-05T07:56:01.675Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-04_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-04",
+      "size": 5830126,
+      "modifiedAt": "2026-09-04T07:56:07.141Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-04_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-04",
+      "size": 15110831,
+      "modifiedAt": "2026-09-04T07:58:15.904Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-03_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-03",
+      "size": 644233,
+      "modifiedAt": "2026-09-03T07:55:22.209Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-03_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-03",
+      "size": 2561333,
+      "modifiedAt": "2026-09-03T07:55:53.000Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-02_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-02",
+      "size": 494440,
+      "modifiedAt": "2026-09-02T07:55:18.324Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-02_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-02",
+      "size": 1963699,
+      "modifiedAt": "2026-09-02T07:55:37.858Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-09-01_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-09-01",
+      "size": 385626,
+      "modifiedAt": "2026-09-01T07:55:24.643Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-09-01_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-09-01",
+      "size": 1526964,
+      "modifiedAt": "2026-09-01T07:55:42.483Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-31_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-31",
+      "size": 381963,
+      "modifiedAt": "2026-08-31T07:55:15.101Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-31_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-31",
+      "size": 1517633,
+      "modifiedAt": "2026-08-31T07:55:30.231Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-30_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-30",
+      "size": 474285,
+      "modifiedAt": "2026-08-30T07:55:15.543Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-30_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-30",
+      "size": 1890114,
+      "modifiedAt": "2026-08-30T07:55:32.333Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-29_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-29",
+      "size": 385675,
+      "modifiedAt": "2026-08-29T07:59:54.167Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-29_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-29",
+      "size": 683558,
+      "modifiedAt": "2026-08-29T08:00:32.685Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-28_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-28",
+      "size": 16288732,
+      "modifiedAt": "2026-08-28T07:56:54.498Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-28_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-28",
+      "size": 19394622,
+      "modifiedAt": "2026-08-28T07:58:51.758Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-27_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-27",
+      "size": 521326,
+      "modifiedAt": "2026-08-27T07:55:15.545Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-27_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-27",
+      "size": 2072129,
+      "modifiedAt": "2026-08-27T07:55:35.256Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-26_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-26",
+      "size": 471415,
+      "modifiedAt": "2026-08-26T07:55:16.820Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-26_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-26",
+      "size": 1872227,
+      "modifiedAt": "2026-08-26T07:55:35.698Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-25_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-25",
+      "size": 369585,
+      "modifiedAt": "2026-08-25T07:55:14.979Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-25_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-25",
+      "size": 1461397,
+      "modifiedAt": "2026-08-25T07:55:30.540Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-24_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-24",
+      "size": 922280,
+      "modifiedAt": "2026-08-24T07:55:29.355Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-24_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-24",
+      "size": 3671587,
+      "modifiedAt": "2026-08-24T07:56:05.220Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-23_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-23",
+      "size": 934903,
+      "modifiedAt": "2026-08-23T07:55:29.739Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-23_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-23",
+      "size": 3717295,
+      "modifiedAt": "2026-08-23T07:56:06.539Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-22_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-22",
+      "size": 1190216,
+      "modifiedAt": "2026-08-22T07:55:44.954Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-22_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-22",
+      "size": 4723575,
+      "modifiedAt": "2026-08-22T07:56:34.655Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-21_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-21",
+      "size": 3480766,
+      "modifiedAt": "2026-08-21T07:55:42.884Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-21_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-21",
+      "size": 8306556,
+      "modifiedAt": "2026-08-21T07:56:41.121Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-20_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-20",
+      "size": 573050,
+      "modifiedAt": "2026-08-20T07:55:23.215Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-20_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-20",
+      "size": 2270922,
+      "modifiedAt": "2026-08-20T07:55:51.682Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-19_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-19",
+      "size": 388060,
+      "modifiedAt": "2026-08-19T07:55:15.748Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-19_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-19",
+      "size": 1544851,
+      "modifiedAt": "2026-08-19T07:55:32.006Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-18_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-18",
+      "size": 210210,
+      "modifiedAt": "2026-08-18T07:55:15.867Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-18_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-18",
+      "size": 831182,
+      "modifiedAt": "2026-08-18T07:55:28.868Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-17_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-17",
+      "size": 292409,
+      "modifiedAt": "2026-08-17T07:55:13.014Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-17_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-17",
+      "size": 1165813,
+      "modifiedAt": "2026-08-17T07:55:24.525Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-16_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-16",
+      "size": 327163,
+      "modifiedAt": "2026-08-16T07:55:12.673Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-16_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-16",
+      "size": 1302809,
+      "modifiedAt": "2026-08-16T07:55:25.734Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-15_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-15",
+      "size": 316487,
+      "modifiedAt": "2026-08-15T07:55:12.650Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-15_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-15",
+      "size": 1257786,
+      "modifiedAt": "2026-08-15T07:55:24.914Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-14_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-14",
+      "size": 3624515,
+      "modifiedAt": "2026-08-14T07:55:31.417Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-14_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-14",
+      "size": 8109361,
+      "modifiedAt": "2026-08-14T07:56:15.648Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-13_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-13",
+      "size": 376037,
+      "modifiedAt": "2026-08-13T07:55:16.350Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-13_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-13",
+      "size": 1494952,
+      "modifiedAt": "2026-08-13T07:55:31.322Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-12_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-12",
+      "size": 325665,
+      "modifiedAt": "2026-08-12T07:55:17.197Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-12_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-12",
+      "size": 1294078,
+      "modifiedAt": "2026-08-12T07:55:31.406Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-11_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-11",
+      "size": 379186,
+      "modifiedAt": "2026-08-11T07:55:16.418Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-11_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-11",
+      "size": 1511189,
+      "modifiedAt": "2026-08-11T07:55:31.865Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-10_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-10",
+      "size": 294687,
+      "modifiedAt": "2026-08-10T07:55:14.079Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-10_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-10",
+      "size": 1172967,
+      "modifiedAt": "2026-08-10T07:55:26.044Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-09_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-09",
+      "size": 314506,
+      "modifiedAt": "2026-08-09T07:55:12.545Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-09_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-09",
+      "size": 1253704,
+      "modifiedAt": "2026-08-09T07:55:24.871Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-08_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-08",
+      "size": 355851,
+      "modifiedAt": "2026-08-08T07:55:12.952Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-08_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-08",
+      "size": 1416258,
+      "modifiedAt": "2026-08-08T07:55:26.274Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-07_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-07",
+      "size": 3455711,
+      "modifiedAt": "2026-08-07T07:55:32.311Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-07_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-07",
+      "size": 7339095,
+      "modifiedAt": "2026-08-07T07:56:17.555Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-06_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-06",
+      "size": 361606,
+      "modifiedAt": "2026-08-06T07:55:15.109Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-06_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-06",
+      "size": 1438480,
+      "modifiedAt": "2026-08-06T07:55:29.043Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-05_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-05",
+      "size": 343480,
+      "modifiedAt": "2026-08-05T07:55:14.021Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-05_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-05",
+      "size": 1363324,
+      "modifiedAt": "2026-08-05T07:55:27.654Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-04_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-04",
+      "size": 342283,
+      "modifiedAt": "2026-08-04T07:55:14.084Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-04_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-04",
+      "size": 1362058,
+      "modifiedAt": "2026-08-04T07:55:27.396Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-03_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-03",
+      "size": 382514,
+      "modifiedAt": "2026-08-03T07:55:12.235Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-03_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-03",
+      "size": 1523730,
+      "modifiedAt": "2026-08-03T07:55:25.236Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-02_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-02",
+      "size": 363879,
+      "modifiedAt": "2026-08-02T07:55:13.430Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-02_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-02",
+      "size": 1448101,
+      "modifiedAt": "2026-08-02T07:55:27.569Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-08-01_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-08-01",
+      "size": 436723,
+      "modifiedAt": "2026-08-01T07:55:14.400Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-08-01_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-08-01",
+      "size": 1738969,
+      "modifiedAt": "2026-08-01T07:55:29.189Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-31_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-31",
+      "size": 22808088,
+      "modifiedAt": "2026-07-31T07:57:08.665Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-31_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-31",
+      "size": 24218152,
+      "modifiedAt": "2026-07-31T07:59:23.412Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-30_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-30",
+      "size": 420214,
+      "modifiedAt": "2026-07-30T07:55:14.700Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-30_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-30",
+      "size": 1670429,
+      "modifiedAt": "2026-07-30T07:55:29.252Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-29_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-29",
+      "size": 351535,
+      "modifiedAt": "2026-07-29T07:55:14.915Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-29_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-29",
+      "size": 1396801,
+      "modifiedAt": "2026-07-29T07:55:28.960Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-28_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-28",
+      "size": 305382,
+      "modifiedAt": "2026-07-28T07:55:15.030Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-28_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-28",
+      "size": 1209189,
+      "modifiedAt": "2026-07-28T07:55:28.015Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-27_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-27",
+      "size": 376778,
+      "modifiedAt": "2026-07-27T07:55:15.047Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-27_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-27",
+      "size": 1501412,
+      "modifiedAt": "2026-07-27T07:55:28.779Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-26_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-26",
+      "size": 407508,
+      "modifiedAt": "2026-07-26T07:55:14.955Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-26_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-26",
+      "size": 1624060,
+      "modifiedAt": "2026-07-26T07:55:30.032Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-25_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-25",
+      "size": 349525,
+      "modifiedAt": "2026-07-25T07:55:14.452Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-25_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-25",
+      "size": 1388544,
+      "modifiedAt": "2026-07-25T07:55:27.955Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-24_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-24",
+      "size": 4129743,
+      "modifiedAt": "2026-07-24T07:55:32.505Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-24_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-24",
+      "size": 9114721,
+      "modifiedAt": "2026-07-24T07:56:20.703Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-23_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-23",
+      "size": 442421,
+      "modifiedAt": "2026-07-23T07:55:14.583Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-23_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-23",
+      "size": 1756886,
+      "modifiedAt": "2026-07-23T07:55:30.279Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-22_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-22",
+      "size": 357078,
+      "modifiedAt": "2026-07-22T07:55:12.745Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-22_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-22",
+      "size": 1418311,
+      "modifiedAt": "2026-07-22T07:55:25.686Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-21_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-21",
+      "size": 371188,
+      "modifiedAt": "2026-07-21T07:55:13.382Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-21_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-21",
+      "size": 1475710,
+      "modifiedAt": "2026-07-21T07:55:27.119Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-19_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-19",
+      "size": 359295,
+      "modifiedAt": "2026-07-19T07:55:11.972Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-19_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-19",
+      "size": 1428498,
+      "modifiedAt": "2026-07-19T07:55:24.333Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-18_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-18",
+      "size": 374642,
+      "modifiedAt": "2026-07-18T07:55:11.988Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-18_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-18",
+      "size": 1488716,
+      "modifiedAt": "2026-07-18T07:55:25.113Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-17_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-17",
+      "size": 4529066,
+      "modifiedAt": "2026-07-17T07:55:34.958Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-17_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-17",
+      "size": 9526355,
+      "modifiedAt": "2026-07-17T07:56:27.684Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-16_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-16",
+      "size": 451961,
+      "modifiedAt": "2026-07-16T07:55:13.899Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-16_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-16",
+      "size": 1796684,
+      "modifiedAt": "2026-07-16T07:55:29.651Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-15_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-15",
+      "size": 411540,
+      "modifiedAt": "2026-07-15T07:55:14.879Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-15_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-15",
+      "size": 1636144,
+      "modifiedAt": "2026-07-15T07:55:31.109Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-14_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-14",
+      "size": 356229,
+      "modifiedAt": "2026-07-14T07:55:12.596Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-14_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-14",
+      "size": 1417463,
+      "modifiedAt": "2026-07-14T07:55:26.038Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-13_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-13",
+      "size": 296288,
+      "modifiedAt": "2026-07-13T07:55:12.502Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-13_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-13",
+      "size": 1176918,
+      "modifiedAt": "2026-07-13T07:55:24.696Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-12_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-12",
+      "size": 383253,
+      "modifiedAt": "2026-07-12T07:55:12.592Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-12_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-12",
+      "size": 1523745,
+      "modifiedAt": "2026-07-12T07:55:27.421Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-11_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-11",
+      "size": 523339,
+      "modifiedAt": "2026-07-11T07:55:16.018Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-11_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-11",
+      "size": 2083265,
+      "modifiedAt": "2026-07-11T07:55:34.769Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-10_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-10",
+      "size": 4585825,
+      "modifiedAt": "2026-07-10T07:55:39.603Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-10_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-10",
+      "size": 10526335,
+      "modifiedAt": "2026-07-10T07:56:38.347Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-09_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-09",
+      "size": 513469,
+      "modifiedAt": "2026-07-09T07:55:15.124Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-09_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-09",
+      "size": 2040637,
+      "modifiedAt": "2026-07-09T07:55:33.570Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-08_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-08",
+      "size": 412519,
+      "modifiedAt": "2026-07-08T07:55:15.567Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-08_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-08",
+      "size": 1635894,
+      "modifiedAt": "2026-07-08T07:55:31.225Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-07_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-07",
+      "size": 468772,
+      "modifiedAt": "2026-07-07T07:55:16.476Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-07_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-07",
+      "size": 1865912,
+      "modifiedAt": "2026-07-07T07:55:34.501Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-06_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-06",
+      "size": 336965,
+      "modifiedAt": "2026-07-06T07:55:12.806Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-06_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-06",
+      "size": 1340562,
+      "modifiedAt": "2026-07-06T07:55:26.142Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-05_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-05",
+      "size": 489020,
+      "modifiedAt": "2026-07-05T07:55:16.473Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-05_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-05",
+      "size": 1946928,
+      "modifiedAt": "2026-07-05T07:55:35.846Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-04_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-04",
+      "size": 497776,
+      "modifiedAt": "2026-07-04T07:55:15.434Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-04_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-04",
+      "size": 1979819,
+      "modifiedAt": "2026-07-04T07:55:33.387Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-03_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-03",
+      "size": 3774956,
+      "modifiedAt": "2026-07-03T07:55:34.315Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-03_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-03",
+      "size": 8448037,
+      "modifiedAt": "2026-07-03T07:56:28.822Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-02_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-02",
+      "size": 399930,
+      "modifiedAt": "2026-07-02T07:55:14.396Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-02_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-02",
+      "size": 1588147,
+      "modifiedAt": "2026-07-02T07:55:29.994Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-07-01_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-07-01",
+      "size": 411301,
+      "modifiedAt": "2026-07-01T07:55:14.901Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-07-01_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-07-01",
+      "size": 1633779,
+      "modifiedAt": "2026-07-01T07:55:30.477Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-30_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-30",
+      "size": 379504,
+      "modifiedAt": "2026-06-30T07:55:15.027Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-30_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-30",
+      "size": 1507022,
+      "modifiedAt": "2026-06-30T07:55:30.656Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-29_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-29",
+      "size": 426024,
+      "modifiedAt": "2026-06-29T07:55:14.052Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-29_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-29",
+      "size": 1694535,
+      "modifiedAt": "2026-06-29T07:55:29.347Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-28_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-28",
+      "size": 536097,
+      "modifiedAt": "2026-06-28T07:55:16.210Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-28_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-28",
+      "size": 2135342,
+      "modifiedAt": "2026-06-28T07:55:35.520Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-27_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-27",
+      "size": 549019,
+      "modifiedAt": "2026-06-27T07:55:16.609Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-27_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-27",
+      "size": 2179344,
+      "modifiedAt": "2026-06-27T07:55:35.562Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-25_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-25",
+      "size": 491442,
+      "modifiedAt": "2026-06-25T07:59:15.509Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-25_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-25",
+      "size": 1952059,
+      "modifiedAt": "2026-06-25T07:59:36.070Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-24_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-24",
+      "size": 386157,
+      "modifiedAt": "2026-06-24T07:59:16.667Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_15m_2026-06-24_all_klines.csv",
+      "interval": "15m",
+      "date": "2026-06-24",
+      "size": 923427,
+      "modifiedAt": "2026-06-23T08:09:05.816Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-23_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-23",
+      "size": 330247,
+      "modifiedAt": "2026-06-23T07:59:12.303Z"
+    },
+    {
+      "name": "BTCUSDT_Options_all-available_1h_2026-06-22_all_klines.csv",
+      "interval": "1h",
+      "date": "2026-06-22",
+      "size": 266405,
+      "modifiedAt": "2026-06-21T11:22:19.708Z"
+    }
+  ]
+}

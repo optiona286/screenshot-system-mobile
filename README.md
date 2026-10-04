@@ -19,7 +19,7 @@
 
 部署時 `scripts/build-site.cjs` 自動產生 `history-manifest.json`，讓手機從同一網站下載對應 CSV，無須呼叫 GitHub 目錄 API。`_site/` 是產生的網站成品，不提交到 Git。
 
-新增歷史資料時，將桌面端新產生的 CSV 複製到本儲存庫同名資料夾，提交並推送即可；保留已有歷史檔。頁面每 30 秒可重讀索引，但不會自行切換到其他日期。
+新增歷史資料時，將桌面端新產生的 CSV 複製到本儲存庫同名資料夾，執行 `node scripts/build-site.cjs` 更新根目錄的 `history-manifest.json`，再將 CSV 與索引一併提交、推送；保留已有歷史檔。根目錄索引也支援直接從分支發布 Pages。頁面每 30 秒可重讀索引，但不會自行切換到其他日期。
 
 ## BTC/USD 資料
 

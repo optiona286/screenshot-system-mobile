@@ -21,5 +21,8 @@ for (const name of fs.readdirSync(source)) {
   if (match) files.push({ name, interval: match[1].toLowerCase(), date: match[2], size: stat.size, modifiedAt: stat.mtime.toISOString() });
 }
 files.sort((a, b) => b.date.localeCompare(a.date) || (b.interval === "1h") - (a.interval === "1h"));
-fs.writeFileSync(path.join(site, "history-manifest.json"), JSON.stringify({ generatedAt: new Date().toISOString(), files }));
+const manifest = JSON.stringify({ generatedAt: new Date().toISOString(), files }, null, 2) + "\n";
+fs.writeFileSync(path.join(site, "history-manifest.json"), manifest);
+// Also keep a root manifest for repositories still using branch-based Pages.
+fs.writeFileSync(path.join(root, "history-manifest.json"), manifest);
 console.log(`Published ${files.length} historical candle datasets.`);
