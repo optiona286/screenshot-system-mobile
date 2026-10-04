@@ -91,9 +91,11 @@
     .chain-table .side-head .call-band{background:#a90000;color:#fff}
     .chain-table .side-head .put-band{background:#007d13;color:#fff}
     .chain-table .side-head .strike-cap{background:#050505;color:#777;border-left:1px solid #202020;border-right:1px solid #202020}
-    .chain-table th:nth-child(1),.chain-table th:nth-child(5){width:18%}
-    .chain-table th:nth-child(2),.chain-table th:nth-child(4){width:21%}
-    .chain-table th:nth-child(3){width:22%}
+    .chain-table th:nth-child(1),
+    .chain-table th:nth-child(2),
+    .chain-table th:nth-child(3),
+    .chain-table th:nth-child(4),
+    .chain-table th:nth-child(5){width:20%}
     .chain-table td{
       height:56px;border-bottom:1px solid #262626;background:#000;color:#00d829;
       text-align:right;font-size:14px;font-weight:400;vertical-align:middle;
@@ -247,7 +249,7 @@
       .layout[data-mobile-view="chain"] aside{display:grid;height:100%;border:0}
       .layout[data-mobile-view="chain"] main{display:none}
       .layout[data-mobile-view="chart"] aside{display:none}
-      .layout[data-mobile-view="chart"] main{display:grid;height:100%;grid-template-rows:auto auto auto minmax(0,1fr)}
+      .layout[data-mobile-view="chart"] main{display:grid;height:100%;grid-template-rows:auto auto minmax(0,1fr)}
 
 
 
@@ -275,9 +277,11 @@
     }
     @media(max-width:390px){
       .top-actions .status{display:none}
-      .chain-table th:nth-child(1),.chain-table th:nth-child(5){width:17%}
-      .chain-table th:nth-child(2),.chain-table th:nth-child(4){width:22%}
-      .chain-table th:nth-child(3){width:22%}
+      .chain-table th:nth-child(1),
+      .chain-table th:nth-child(2),
+      .chain-table th:nth-child(3),
+      .chain-table th:nth-child(4),
+      .chain-table th:nth-child(5){width:20%}
       .quote,.quote-metric{padding-left:4px;padding-right:4px}
       .subline{font-size:7px}
       .instrument h2{max-width:205px}
