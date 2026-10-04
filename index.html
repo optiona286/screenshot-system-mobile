@@ -92,7 +92,9 @@
     .chain-table .side-head .put-band{background:#007d13;color:#fff}
     .chain-table .side-head .strike-cap{background:#050505;color:#777;border-left:1px solid #202020;border-right:1px solid #202020}
     .chain-table col{width:20%!important}
-    .chain-table .side-head th{width:auto!important}
+    .chain-table .side-head .call-band,
+    .chain-table .side-head .put-band{width:40%!important}
+    .chain-table .side-head .strike-cap{width:20%!important}
     .chain-table td{
       height:56px;border-bottom:1px solid #262626;background:#000;color:#00d829;
       text-align:right;font-size:14px;font-weight:400;vertical-align:middle;
@@ -206,10 +208,36 @@
       .chain-toolbar .field:last-child label{display:none}
       .chain-toolbar .btn{height:30px;padding:3px 6px;font-size:10px}
       .chain-headline{min-height:25px;padding:4px 7px;font-size:8px}
-      .chain-table .side-head th{height:27px;font-size:14px}
+      .chain-table{
+        width:100%!important;
+        min-width:0!important;
+        max-width:100%!important;
+        table-layout:fixed!important;
+      }
+      .chain-table col{width:20%!important}
+      .chain-table .side-head .call-band,
+      .chain-table .side-head .put-band{width:40%!important}
+      .chain-table .side-head .strike-cap{width:20%!important}
       .chain-table th{height:30px;font-size:10px}
-      .chain-table td{height:54px}
-      .strike-button{height:53px}
+      .chain-table td{
+        width:20%!important;
+        min-width:0!important;
+        max-width:20%!important;
+        height:54px;
+        overflow:hidden;
+      }
+      .chain-table td:nth-child(1),
+      .chain-table td:nth-child(2),
+      .chain-table td:nth-child(3),
+      .chain-table td:nth-child(4),
+      .chain-table td:nth-child(5){width:20%!important}
+      .quote,.quote-metric,.strike{min-width:0!important;max-width:none!important}
+      .quote,.quote-metric{padding-left:3px!important;padding-right:3px!important}
+      .quote .last,.quote-metric,.strike-button{
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      }
+      .chain-table .side-head th{height:27px;font-size:14px}
+      .strike-button{width:100%!important;height:53px;padding:0 2px;font-size:13px!important}
       .mobile-period-strip{padding:4px 8px;min-height:35px}
       .mobile-period-strip select{min-height:27px;width:96px;padding:3px 5px}
       .instrument{padding:6px 9px}
@@ -275,7 +303,8 @@
     @media(max-width:390px){
       .top-actions .status{display:none}
       .chain-table col{width:20%!important}
-      .quote,.quote-metric{padding-left:4px;padding-right:4px}
+      .chain-table td{width:20%!important;max-width:20%!important}
+      .quote,.quote-metric{padding-left:2px!important;padding-right:2px!important}
       .subline{font-size:7px}
       .instrument h2{max-width:205px}
     }
